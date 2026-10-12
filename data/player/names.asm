@@ -7,6 +7,13 @@ FOR n, 1, NUM_PLAYER_NAMES + 1
 ENDR
 	db "@"
 
+DefaultNamesGirl:
+	db "NUOVO"
+FOR n, 1, NUM_PLAYER_NAMES + 1
+	next #GIRLNAME{d:n}
+ENDR
+	db "@"
+
 DefaultNamesRival:
 	db "NUOVO"
 FOR n, 1, NUM_PLAYER_NAMES + 1

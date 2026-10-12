@@ -143,13 +143,13 @@ _OaksLabGivePokeballsExplanationText::
 
 	para "Lanciagli una"
 	line "# BALL e cerca"
-	line "di prenderlo!"
+	cont "di prenderlo!"
 
 	para "Ma non sempre"
 	line "funzionerà."
 
-	para "Un #MON in forma"
-	line "può scappare."
+	para "Un #MON in for-"
+	line "ma può scappare."
 	cont "Ci vuole fortuna!"
 	done
 

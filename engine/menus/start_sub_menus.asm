@@ -478,6 +478,12 @@ StartMenu_TrainerInfo::
 DrawTrainerInfo:
 	ld de, RedPicFront
 	lb bc, BANK(RedPicFront), $01
+	ld a, [wPlayerGender]
+	and a
+	jr z, .AreBoy
+	ld de, GreenPicFront
+	lb bc, BANK(GreenPicFront), $01
+.AreBoy
 	predef DisplayPicCenteredOrUpperRight
 	call DisableLCD
 	hlcoord 0, 2
@@ -664,7 +670,7 @@ SwitchPartyMon::
 	call SwitchPartyMon_ClearGfx
 	ld a, [wCurrentMenuItem]
 	call SwitchPartyMon_ClearGfx
-	jp RedrawPartyMenu_
+	jp RedrawPartyMenu_ReloadSprites
 
 SwitchPartyMon_ClearGfx:
 	push af

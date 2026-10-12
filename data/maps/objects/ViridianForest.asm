@@ -9,7 +9,7 @@
 	const_export VIRIDIANFOREST_YOUNGSTER5
 
 ViridianForest_Object:
-	db $3 ; border block
+	db $02 ; border block
 
 	def_warp_events
 	warp_event  1,  0, VIRIDIAN_FOREST_NORTH_GATE, 3
@@ -25,7 +25,7 @@ ViridianForest_Object:
 	bg_event 26, 17, TEXT_VIRIDIANFOREST_TRAINER_TIPS2
 	bg_event  4, 24, TEXT_VIRIDIANFOREST_TRAINER_TIPS3
 	bg_event 18, 45, TEXT_VIRIDIANFOREST_TRAINER_TIPS4
-	bg_event  2,  1, TEXT_VIRIDIANFOREST_LEAVING_SIGN
+	bg_event  0,  0, TEXT_VIRIDIANFOREST_LEAVING_SIGN
 
 	def_object_events
 	object_event 16, 43, SPRITE_YOUNGSTER, STAY, NONE, TEXT_VIRIDIANFOREST_YOUNGSTER1

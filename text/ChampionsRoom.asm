@@ -111,14 +111,14 @@ _ChampionsRoomOakDisappointedWithRivalText::
 	text "OAK: <RIVAL>!"
 	line "Sono deluso!"
 
-	para "Sono venuto appena"
-	line "ho saputo che"
-	cont "avevi battuto"
+	para "Ero veramente"
+	line "felice quando ti"
+	cont "ho visto battere"
 	cont "i SUPERQUATTRO!"
 
-	para "Ma quando sono"
-	line "arrivato avevi"
-	cont "perso di nuovo!"
+	para "Ma ecco che pochi"
+	line "minuti dopo avevi"
+	cont "gia perso!"
 
 	para "<RIVAL>! Sai"
 	line "perché hai perso?"

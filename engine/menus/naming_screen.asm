@@ -92,7 +92,6 @@ DisplayNamingScreen:
 	call RunPaletteCommand
 	call LoadHpBarAndStatusTilePatterns
 	call LoadEDTile
-	farcall LoadMonPartySpriteGfx
 	hlcoord 0, 4
 	ld b, 9
 	ld c, 18
@@ -117,7 +116,9 @@ DisplayNamingScreen:
 	ld [wAnimCounter], a
 .selectReturnPoint
 	call PrintAlphabet
-	call GBPalNormal
+	ld a, %11100100 ; 3210
+	ldh [rBGP], a
+	ldh [rOBP0], a
 .ABStartReturnPoint
 	ld a, [wNamingScreenSubmitName]
 	and a
@@ -324,14 +325,10 @@ DisplayNamingScreen:
 	jp EraseMenuCursor
 
 LoadEDTile:
-	call DisableLCD
-	ld de, vFont tile $70
-	ld hl, ED_Tile
-	; BUG: BANK("Home") should be BANK(ED_Tile), although it coincidentally works as-is
-	lb bc, BANK("Home"), (ED_TileEnd - ED_Tile)
-	ld a, $01
-	call FarCopyDataDouble
-	jp EnableLCD
+	ld de, ED_Tile
+	ld hl, vFont tile $70
+	lb bc, BANK(ED_Tile), (ED_TileEnd - ED_Tile) / TILE_1BPP_SIZE
+	jp CopyVideoDataDouble
 
 ED_Tile:
 	INCBIN "gfx/font/ED.1bpp"
@@ -458,23 +455,30 @@ PrintNamingText:
 	ld a, [wNamingScreenType]
 	ld de, YourTextString
 	and a
-	jr z, .placeString
+	jr z, .notNickname
 	ld de, RivalsTextString
 	dec a
-	jr z, .placeString
+	jr z, .notNickname
 	ld a, [wCurPartySpecies]
 	ld [wMonPartySpriteSpecies], a
 	push af
-	farcall WriteMonPartySpriteOAMBySpecies
+	farcall LoadSinglePartyMonSprite
 	pop af
 	ld [wNamedObjectIndex], a
 	call GetMonName
 	hlcoord 4, 1
 	call PlaceString
+	ld hl, $1
+	add hl, bc
+	ld [hl], 'の' ; leftover from Japanese version; blank tile $c9 in English
 	hlcoord 1, 3
 	ld de, NicknameTextString
 	jr .placeString
-
+.notNickname
+	call PlaceString
+	ld l, c
+	ld h, b
+	ld de, NameTextString
 .placeString
 	jp PlaceString
 

@@ -20,8 +20,11 @@ _PlayerBlackedOutText::
 
 _RepelWoreOffText::
 	text "Finito l'effetto"
-	line "del REPELLENTE."
+	line "del REPELLENTE.."
+	prompt
 
+_RepelUseAnotherText::
+	text "Usarne un'altro?"
 	done
 
 _PokemartBuyingGreetingText::

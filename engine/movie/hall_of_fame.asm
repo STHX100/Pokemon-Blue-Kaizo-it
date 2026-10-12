@@ -183,8 +183,16 @@ HoFMonInfoText:
 	next "TIPO2/@"
 
 HoFLoadPlayerPics:
+	ld a, [wPlayerGender] ; New gender check
+	and a      ; New gender check
+	jr nz, .GirlStuff1
 	ld de, RedPicFront
 	ld a, BANK(RedPicFront)
+	jr .Routine ; skip the girl stuff and go to main routine
+.GirlStuff1
+	ld de, GreenPicFront
+	ld a, BANK(GreenPicFront)
+.Routine ; resume original routine
 	call UncompressSpriteFromDE
 	ld hl, sSpriteBuffer1
 	ld de, sSpriteBuffer0
@@ -192,8 +200,16 @@ HoFLoadPlayerPics:
 	call CopyData
 	ld de, vFrontPic
 	call InterlaceMergeSpriteBuffers
+	ld a, [wPlayerGender] ; new gender check
+	and a      ; new gender check
+	jr nz, .GirlStuff2
 	ld de, RedPicBack
 	ld a, BANK(RedPicBack)
+	jr .routine2 ; skip the girl stuff and continue original routine if guy
+.GirlStuff2
+	ld de, GreenPicBack
+	ld a, BANK(GreenPicBack)
+.routine2 ; original routine
 	call UncompressSpriteFromDE
 	predef ScaleSpriteByTwo
 	ld de, vBackPic
@@ -209,15 +225,31 @@ HoFLoadMonPlayerPicTileIDs:
 HoFDisplayPlayerStats:
 	SetEvent EVENT_HALL_OF_FAME_DEX_RATING
 	predef DisplayDexRating
+	hlcoord 11, 0 ; Kaizo Text Box
+	lb bc, 2, 7
+	call TextBoxBorder
+	hlcoord 12, 1
+	ld de, KaizoText
+	call PlaceString
+	hlcoord 12, 2
+IF DEF(_RED)
+	ld de, RedText
+ENDC
+IF DEF(_BLUE)
+	ld de, BlueText
+ENDC
+	call PlaceString
+	jp .Next1
+.Next1
 	hlcoord 0, 4
 	ld b, 6
 	ld c, 10
 	call TextBoxBorder
-	hlcoord 5, 0
+	hlcoord 0, 0
 	ld b, 2
 	ld c, 9
 	call TextBoxBorder
-	hlcoord 7, 2
+	hlcoord 1, 2
 	ld de, wPlayerName
 	call PlaceString
 	hlcoord 1, 6
@@ -250,6 +282,15 @@ HoFPrintTextAndDelay:
 	call PrintText
 	ld c, 120
 	jp DelayFrames
+
+RedText:
+	db "ROSSO@"
+
+BlueText:
+	db "BLU@"
+
+KaizoText:
+	db "KAIZO@"
 
 HoFPlayTimeText:
 	db "DURATA@"

@@ -1,19 +1,20 @@
 _FightingDojoKarateMasterText::
-	text "Grrr!"
+	text "Sono BRUNO, il"
+	line "nuovo maestro di"
+	cont "questo DOJO!"
 
-	para "Sono il MAESTRO di"
-	line "KARATE! Sono il"
-	cont "CAPO qui!"
+	para "<PLAYER>!"
 
-	para "Vuoi sfidarci? Non"
-	line "avremo pietà!"
+	para "Ti annienteremo"
+	line "con la nostra"
+	cont "forza sovrumana!"
 
-	para "Fuaaa!"
+	para "Ahahah!"
 	done
 
 _FightingDojoKarateMasterDefeatedText::
-	text "Hua!"
-	line "Mi hai battuto!"
+	text "Come? Ho"
+	line "perso davvero?!"
 	prompt
 
 _FightingDojoKarateMasterIWillGiveYouAPokemonText::

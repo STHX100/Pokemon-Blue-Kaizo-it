@@ -1,29 +1,26 @@
 _BrunoBeforeBattleText::
-	text "Sono BRUNO dei"
-	line "SUPERQUATTRO!"
+	text "Non ti aspettavi"
+	line "di vedermi, eh?"
 
-	para "Con un rigoroso"
-	line "allenamento, le"
-	cont "persone e i"
-	cont "#MON possono"
-	cont "rinforzarsi!"
+	para "Sono qui su"
+	line "richiesta dei"
+	cont "SUPERQUATTRO per"
+	cont "sostituire BRUNO,"
+	cont "che di recente"
+	cont "ha scelto di"
+	cont "lasciarli."
 
-	para "Ho allenato"
-	line "i miei #MON"
-	cont "con i pesi!"
+	para "Bene, <PLAYER>..."
 
-	para "<PLAYER>!"
-
-	para "Ti annienteremo"
-	line "con la nostra"
-	cont "forza sovrumana!"
-
-	para "Ahahah!"
+	para "Mostrami quanto"
+	line "siete cresciuti"
+	cont "tu e i tuoi"
+	cont "#MON!"
 	done
 
 _BrunoEndBattleText::
-	text "Come? Ho"
-	line "perso davvero?!"
+	text "Ben"
+	line "fatto <PLAYER>!"
 
 	prompt
 
