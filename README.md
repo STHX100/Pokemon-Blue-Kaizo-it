@@ -1,3 +1,5 @@
+<img width="256" height="224" alt="KaizoBluTitle" src="https://github.com/user-attachments/assets/a26b72b0-6a52-4c51-abd0-2868d40aafff" /><img width="256" height="224" alt="KaizoRossoTitle" src="https://github.com/user-attachments/assets/5a064969-919c-4d73-b6df-b5d8b124df86" />
+
 # Pokémon - Kaizo Blu
 
 Hi there
@@ -38,6 +40,9 @@ https://github.com/pret/pokered
 https://github.com/alechieffi/pokered-it
 
 https://github.com/CreamElDudJafar/Pokemon-Blue-Kaizo
+
+<img width="160" height="144" alt="KaizoWild" src="https://github.com/user-attachments/assets/ead50982-6bf6-44d0-bc87-3e2eb1e558a9" /><img width="160" height="144" alt="KaizoMaps" src="https://github.com/user-attachments/assets/22b80775-b5a6-4b45-bf11-73962997850a" /><img width="160" height="144" alt="KaizoLearnest" src="https://github.com/user-attachments/assets/2f50f48f-bfa9-41ab-945b-8bca74f03401" /><img width="160" height="144" alt="KaizoIcons" src="https://github.com/user-attachments/assets/9d617597-1605-42f4-8262-a33a5ec65de5" /><img width="160" height="144" alt="KaizoBoyGirl" src="https://github.com/user-attachments/assets/5271fcd8-01c1-4c7c-8b31-7f380a3968ad" /><img width="160" height="144" alt="KaizoTrainers" src="https://github.com/user-attachments/assets/6fe35282-781c-4de6-9923-5a2a74bd6879" />
+
 
 
 
